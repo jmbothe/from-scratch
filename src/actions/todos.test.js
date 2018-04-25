@@ -1,5 +1,5 @@
 import { ADD_TODO, EDIT_TODO, DELETE_TODO, TOGGLE_TODO_COMPLETE } from './constants';
-import { addTodo, editTodo, deleteTodo } from './todos';
+import { addTodo, editTodo, deleteTodo, toggleTodoComplete } from './todos';
 
 describe('todo action creators', () => {
   it('creates an action to add a new todo', () => {

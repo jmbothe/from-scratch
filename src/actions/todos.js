@@ -12,5 +12,10 @@ export const deleteTodo = id => ({
 
 export const editTodo = (id, todo) => ({
   type: EDIT_TODO,
-  payload: { todo, id }
+  payload: { id, todo }
+})
+
+export const toggleTodoComplete = id => ({
+  type: TOGGLE_TODO_COMPLETE,
+  payload: id
 })
