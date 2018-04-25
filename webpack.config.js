@@ -3,9 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  mode: process.env.NODE_ENV,
+  entry: [
+    'react-hot-loader/patch',
+    './src/index.js'
+  ],
   output: {
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
     filename: 'bundle.js'
   },
 
@@ -25,9 +29,6 @@ module.exports = {
         exclude: /node-modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['react-app']
-          }
         }
       },
       {
@@ -39,7 +40,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.ejs',
+      template: './src/index.html',
       minify: {
         collapseWhiteSpace: true
       },
