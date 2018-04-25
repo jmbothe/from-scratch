@@ -18,10 +18,10 @@ describe('todo action creators', () => {
 
   it('creates an action to edit a todo', () => {
     const id = 1;
-    const todo = 'change todo';
-    const expectedAction = { type: EDIT_TODO, payload: { id, todo } }
+    const content = 'change todo';
+    const expectedAction = { type: EDIT_TODO, payload: { id, content } }
 
-    expect(editTodo(id, todo)).toEqual(expectedAction);
+    expect(editTodo(id, content)).toEqual(expectedAction);
   })
 
   it('creates an action to toggle todo complete', () => {

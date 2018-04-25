@@ -10,9 +10,9 @@ export const deleteTodo = id => ({
   payload: id
 })
 
-export const editTodo = (id, todo) => ({
+export const editTodo = (id, content) => ({
   type: EDIT_TODO,
-  payload: { id, todo }
+  payload: { id, content }
 })
 
 export const toggleTodoComplete = id => ({

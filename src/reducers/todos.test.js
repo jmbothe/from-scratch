@@ -7,17 +7,17 @@ describe('todo list reducer', () => {
   const state1 = {'1': { id: 1, content: 'do something', completed: false } };
   const state2 = {...state1, '2': { id: 2, content: 'do something else', completed: false} };
   const state3 = { '1': { id: 1, content: 'do new thing', completed: false } }
-  const State4 = { '1': { id: 1, content: 'do new thing', completed: true } }
+  const state4 = { '1': { id: 1, content: 'do new thing', completed: true } }
 
   describe('when user visits app for the first time', () => {
     it('initializes the todos state', () => {
-      expect(todosReducer(undefined, {})).toEqual(state);
+      expect(todosReducer(undefined, {})).toEqual(state0);
     })
   })
 
   it('adds todos to the list', () => {
     expect(todosReducer(undefined, { type: ADD_TODO, payload: 'do something' }))
-      .toEqual(state)
+      .toEqual(state1)
   })
 
   it('increments todo ids', () => {
@@ -31,7 +31,7 @@ describe('todo list reducer', () => {
   })
 
   it('edits existing todos', () => {
-    expect(todosReducer(state1, { type: EDIT_TODO, payload: { id: 1, todo: 'do new thing' } }))
+    expect(todosReducer(state1, { type: EDIT_TODO, payload: { id: 1, content: 'do new thing' } }))
       .toEqual(state3);
   })
 
