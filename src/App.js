@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
 
-class App extends Component {
-  
-  render() { 
-    return (
-      <section>Hello</section>
-    )
-  }
-}
- 
+import Header from './components/Header';
+
+const App = (props) =>
+  <Fragment>
+    <Header />
+  </Fragment>
+
 export default App;
