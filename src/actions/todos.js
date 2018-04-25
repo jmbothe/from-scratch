@@ -1,4 +1,4 @@
-import { ADD_TODO, EDIT_TODO, DELETE_TODO } from './constants';
+import { ADD_TODO, EDIT_TODO, DELETE_TODO, TOGGLE_TODO_COMPLETE } from './constants';
 
 export const addTodo = todo => ({
   type: ADD_TODO,

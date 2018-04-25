@@ -1,4 +1,4 @@
-import { ADD_TODO, EDIT_TODO, DELETE_TODO } from './constants';
+import { ADD_TODO, EDIT_TODO, DELETE_TODO, TOGGLE_TODO_COMPLETE } from './constants';
 import { addTodo, editTodo, deleteTodo } from './todos';
 
 describe('todo action creators', () => {
@@ -22,5 +22,12 @@ describe('todo action creators', () => {
     const expectedAction = { type: EDIT_TODO, payload: { id, todo } }
 
     expect(editTodo(id, todo)).toEqual(expectedAction);
+  })
+
+  it('creates an action to toggle todo complete', () => {
+    const id = 1
+    const expectedAction = { type: TOGGLE_TODO_COMPLETE, payload: id }
+
+    expect(toggleTodoComplete(id)).toEqual(expectedAction);
   })
 })
