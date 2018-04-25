@@ -17,13 +17,13 @@ describe('<NewTodoField />', () => {
 
   describe('when input field is empty', () => {
     it('displays a placeholder', () => {
-      expect(newTodoField.find('input').props().placeholder.text()).toEqual('Add a new todo...');
+      expect(newTodoField.find('input').props().placeholder).toEqual('Add a new todo...');
     })
   })
 
   describe('when not in error state', () => {
     it('does not display an error message', () => {
-      expect(newTodoField.children()[1].text()).toEqual('');
+      expect(newTodoField.find('p').text()).toEqual('');
     })
   })
 
@@ -31,8 +31,7 @@ describe('<NewTodoField />', () => {
     let props = { meta: { error: 'Please enter a todo before submitting' } }
     let newTodoField = shallow(<NewTodoField { ...props } />);
     it('displays an error message', () => {
-      expect(newTodoField.children()[1].text()).toEqual('Please enter a todo before submitting');
+      expect(newTodoField.find('p').text()).toEqual('Please enter a todo before submitting');
     })
   })
-
 })
