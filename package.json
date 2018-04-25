@@ -38,7 +38,6 @@
       "stage-2"
     ]
   },
-
   "jest": {
     "setupFiles": [
       "./setupTests.js"
